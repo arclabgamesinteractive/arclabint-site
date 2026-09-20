@@ -75,6 +75,144 @@
                 </div>
                 
         </section>
+        <!-- Signup-->
+        <section class="signup-section" id="signup">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-10 col-lg-8 mx-auto text-center">
+                        <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                        <h2 class="text-white mb-5">contact</h2>
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- * * SB Forms Contact Form * *-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- This form is pre-integrated with SB Forms.-->
+                        <!-- To make this form functional, sign up at-->
+                        <!-- https://startbootstrap.com/solution/contact-forms-->
+                        <!-- to get an API token!-->
+                        
+                    </div>
+                           <form id="contact-form" action="https://formspree.io/f/mkjgobeo" method="POST" class="modern-contact-form">
+                                  
+                                  <!-- Name -->
+                                  <div class="form-group">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" id="name" name="name" required placeholder="e.g. John Doe">
+                                  </div>
+
+                                  <!-- E-mail -->
+                                  <div class="form-group">
+                                    <label for="email">Your Email</label>
+                                    <input type="email" id="email" name="email" required placeholder="name@example.com">
+                                  </div>
+
+                                  <!-- Inquiry Type (Filter) -->
+                                  <div class="form-group">
+                                    <label for="inquiry-type">Inquiry Type</label>
+                                    <select id="inquiry-type" name="inquiry_type" required>
+                                      <option value="" disabled selected>-- Select an option --</option>
+                                      <option value="other">General / Fan Inquiry</option>
+                                      <option value="business">Business / Partnership</option>
+                                    </select>
+                                  </div>
+
+                                  <!-- Company Field (Hidden by default, required if Business) -->
+                                  <div id="company-field" class="form-group" style="display: none;">
+                                    <label for="company">Company / Studio Name</label>
+                                    <input type="text" id="company" name="company" placeholder="e.g. Your Studio Name">
+                                  </div>
+
+                                  <!-- Message -->
+                                  <div class="form-group">
+                                    <label for="message">Your Message</label>
+                                    <textarea id="message" name="message" rows="6" required placeholder="Write your message here..."></textarea>
+                                  </div>
+
+                                  <!-- Submit Button -->
+                                  <button type="submit" class="submit-btn">Send Message</button>
+                                </form>
+
+                                <style>
+                                  /* Formulaire large avec un fond noir élégant */
+                                  .modern-contact-form {
+                                    max-width: 800px;
+                                    width: 100%;
+                                    margin: 0 auto;
+                                    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+                                    background: #09090b; /* Fond noir profond pour tout le bloc */
+                                    border: 1px solid #27272a; /* Fine bordure élégante */
+                                    padding: 40px;
+                                    border-radius: 16px;
+                                    box-sizing: border-box;
+                                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                                    color: #f4f4f6;
+                                  }
+                                  .form-group {
+                                    margin-bottom: 24px;
+                                  }
+                                  .modern-contact-form label {
+                                    display: block;
+                                    margin-bottom: 8px;
+                                    font-weight: 500;
+                                    font-size: 0.95rem;
+                                    color: #a1a1aa;
+                                  }
+                                  .modern-contact-form input,
+                                  .modern-contact-form select,
+                                  .modern-contact-form textarea {
+                                    width: 100%;
+                                    padding: 14px 16px;
+                                    background: #18181b; /* Fond des champs légèrement contrasté par rapport au fond général */
+                                    border: 1px solid #27272a;
+                                    border-radius: 8px;
+                                    color: #ffffff;
+                                    font-size: 1rem;
+                                    box-sizing: border-box;
+                                    transition: border-color 0.2s, box-shadow 0.2s;
+                                  }
+                                  .modern-contact-form input:focus,
+                                  .modern-contact-form select:focus,
+                                  .modern-contact-form textarea:focus {
+                                    outline: none;
+                                    border-color: #6366f1;
+                                    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+                                  }
+                                  .submit-btn {
+                                    width: 100%;
+                                    padding: 14px;
+                                    background: #00b0ed;
+                                    color: white;
+                                    border: none;
+                                    border-radius: 8px;
+                                    font-size: 1rem;
+                                    font-weight: 600;
+                                    cursor: pointer;
+                                    transition: background 0.2s;
+                                  }
+                                  .submit-btn:hover {
+                                    background: #4f46e5;
+                                  }
+                                </style>
+
+                                <script>
+                                  // Gestion dynamique du champ entreprise
+                                  const selectType = document.getElementById('inquiry-type');
+                                  const companyField = document.getElementById('company-field');
+                                  const companyInput = document.getElementById('company');
+
+                                  selectType.addEventListener('change', function() {
+                                    if (this.value === 'business') {
+                                      companyField.style.display = 'block';
+                                      companyInput.setAttribute('required', 'true');
+                                    } else {
+                                      companyField.style.display = 'none';
+                                      companyInput.removeAttribute('required');
+                                      companyInput.value = '';
+                                    }
+                                  });
+                                </script>
+                </div>
+            </div>
+        </section>
         <!-- Contact-->
         <section class="contact-section bg-black">
             <div class="container px-4 px-lg-5">
